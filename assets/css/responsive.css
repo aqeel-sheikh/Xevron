@@ -1,3 +1,11 @@
+@media(max-width: 1263px){
+  .process-card{
+    max-width: 600px;
+  }
+  .process-icon::after{
+    background: none;
+  }
+}
 @media (max-width: 860px) {
   nav {
     padding: 2rem 0.5rem;

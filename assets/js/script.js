@@ -7,9 +7,9 @@ const getStartedBtn = document.querySelector(".nav-right .get-started");
 
 const mql = window.matchMedia("(max-width: 860px)");
 
-hamburgerBtn.addEventListener('click', () => {
-  hamburgerBtn.classList.toggle('active');
-  hamburgerContent.classList.toggle('active');
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+  hamburgerContent.classList.toggle("active");
 });
 
 function checkScreenSize() {
@@ -21,7 +21,8 @@ function checkScreenSize() {
   } else {
     hamburgerMenu.style.display = "none";
     hamburgerBtn.style.display = "none";
-    if (hamburgerContent.contains(navLinks)) hamburgerContent.removeChild(navLinks);
+    if (hamburgerContent.contains(navLinks))
+      hamburgerContent.removeChild(navLinks);
     navRight.insertBefore(navLinks, getStartedBtn);
     hamburgerContent.classList.remove("active");
     hamburgerBtn.classList.remove("active");
@@ -29,7 +30,10 @@ function checkScreenSize() {
 }
 
 document.addEventListener("click", function (event) {
-  if (!hamburgerBtn.contains(event.target) && !hamburgerContent.contains(event.target)) {
+  if (
+    !hamburgerBtn.contains(event.target) &&
+    !hamburgerContent.contains(event.target)
+  ) {
     hamburgerContent.classList.remove("active");
     hamburgerBtn.classList.remove("active");
   }
@@ -44,3 +48,45 @@ hamburgerContent.addEventListener("click", function (event) {
 
 mql.addEventListener("change", checkScreenSize);
 document.addEventListener("DOMContentLoaded", checkScreenSize);
+
+gsap.registerPlugin(ScrollSmoother);
+const clamp = gsap.utils.clamp(-20, 20);
+const skewSetter = gsap.quickTo("#portfolio img", "skewY");
+
+ScrollSmoother.create({
+  wrapper: "#wrapper",
+  content: "#content",
+  smooth: 2,
+  speed: 3,
+  effects: true,
+  onUpdate: (self) => skewSetter(clamp(self.getVelocity() / -50)),
+  onStop: () => skewSetter(0),
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const portfolioSection = document.querySelector("#portfolio");
+const portfolioImages = gsap.utils.toArray("#portfolio .images img");
+
+if (portfolioSection && portfolioImages.length) {
+  portfolioImages.forEach((img) => {
+    const speed = parseFloat(img.getAttribute("data-speed")) || 1;
+
+    const movement = (1 - speed) * 200; 
+
+    gsap.fromTo(
+      img,
+      { y: -movement },
+      {
+        y: movement,
+        ease: "none",
+        scrollTrigger: {
+          trigger: portfolioSection,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      }
+    );
+  });
+}

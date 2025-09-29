@@ -14,6 +14,11 @@
     padding: .3rem .5rem;
   }
 }
+@media (max-width: 768px){
+  #portfolio .images {
+    gap: 2rem;
+  }
+}
 @media (max-width: 515px){
   .brands p::after, .brands p::before{
     width: 10%;

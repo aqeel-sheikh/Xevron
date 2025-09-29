@@ -1,69 +1,46 @@
-const hamburger = document.querySelector("#hamburger-btn");
-const hamburgerIcon = document.querySelector("#hamburger");
-const offScreenMenu = document.querySelector(".offScreenMenu");
-const navLinks = document.querySelector(".nav-right .nav-links");
+const hamburgerBtn = document.querySelector("#hamburger-btn");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
+const hamburgerContent = document.querySelector(".hamburger-content");
+const navLinks = document.querySelector(".nav-right .nav-links");
+const navRight = document.querySelector(".nav-right");
+const getStartedBtn = document.querySelector(".nav-right .get-started");
 
-let mql = window.matchMedia("(max-width: 860px)");
-let isHamburgerIcon = true;
+const mql = window.matchMedia("(max-width: 860px)");
 
-function toggleImageSrc() {
-  if (isHamburgerIcon) {
-    hamburgerIcon.src = "assets/images/icons/header/close.svg";
-  } else {
-    hamburgerIcon.src = "assets/images/icons/header/hamburger.svg";
-  }
-  isHamburgerIcon = !isHamburgerIcon;
-}
-function toggleMobileMenu() {
-  offScreenMenu.classList.toggle("active");
-  toggleImageSrc();
-}
-
-function closeMobileMenu() {
-  offScreenMenu.classList.remove("active");
-  if (!isHamburgerIcon) {
-    toggleImageSrc();
-  }
-}
-
-function resetHamburgerIcon() {
-  if (isHamburgerIcon === false) {
-    hamburgerIcon.src = "assets/images/icons/header/hamburger.svg";
-    isHamburgerIcon = true;
-  }
-}
+hamburgerBtn.addEventListener('click', () => {
+  hamburgerBtn.classList.toggle('active');
+  hamburgerContent.classList.toggle('active');
+});
 
 function checkScreenSize() {
   if (mql.matches) {
     hamburgerMenu.style.display = "block";
-    hamburger.style.display = "block";
-    navLinks.style.display = "none";
+    hamburgerBtn.style.display = "block";
+    if (navRight.contains(navLinks)) navRight.removeChild(navLinks);
+    hamburgerContent.appendChild(navLinks);
   } else {
     hamburgerMenu.style.display = "none";
-    hamburger.style.display = "none";
-    navLinks.style.display = "block";
-    closeMobileMenu();
-    resetHamburgerIcon();
+    hamburgerBtn.style.display = "none";
+    if (hamburgerContent.contains(navLinks)) hamburgerContent.removeChild(navLinks);
+    navRight.insertBefore(navLinks, getStartedBtn);
+    hamburgerContent.classList.remove("active");
+    hamburgerBtn.classList.remove("active");
   }
 }
 
-hamburger.addEventListener("click", toggleMobileMenu);
-
 document.addEventListener("click", function (event) {
-  if (
-    !hamburger.contains(event.target) &&
-    !offScreenMenu.contains(event.target)
-  ) {
-    closeMobileMenu();
+  if (!hamburgerBtn.contains(event.target) && !hamburgerContent.contains(event.target)) {
+    hamburgerContent.classList.remove("active");
+    hamburgerBtn.classList.remove("active");
   }
 });
 
-const mobileMenuLinks = offScreenMenu.querySelectorAll("a");
-mobileMenuLinks.forEach((link) => {
-  link.addEventListener("click", closeMobileMenu);
+hamburgerContent.addEventListener("click", function (event) {
+  if (event.target.matches("a")) {
+    hamburgerContent.classList.remove("active");
+    hamburgerBtn.classList.remove("active");
+  }
 });
 
 mql.addEventListener("change", checkScreenSize);
-
 document.addEventListener("DOMContentLoaded", checkScreenSize);

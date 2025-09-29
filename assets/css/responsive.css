@@ -2,15 +2,6 @@
   nav {
     padding: 2rem 0.5rem;
   }
-  .hamburger-menu {
-    display: block;
-  }
-  #hamburger-btn {
-    display: block;
-  }
-  .nav-links {
-    display: none;
-  }
   .nav-right .btn{
     padding: .3rem .5rem;
   }

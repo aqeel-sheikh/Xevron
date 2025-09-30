@@ -13,6 +13,7 @@ body {
   color: var(--primary-color1);
   font-family: poppins;
   background-color: var(--bg-color1);
+  scroll-behavior: smooth;
 }
 /* Global */
 .section {
@@ -413,7 +414,6 @@ nav {
   padding: 2rem;
   gap: 1rem;
 }
-
 .service-names {
   flex-wrap: wrap;
   gap: 0.5rem;

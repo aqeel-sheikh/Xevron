@@ -6,6 +6,8 @@
   --primary-color3: #000;
   --primary-color4: #ffffff80;
   --primary-color5: #00000080;
+  --primary-color6: #9593a4;
+  --primary-color7: #b8fd5010;
 }
 body {
   color: var(--primary-color1);
@@ -32,6 +34,47 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
+}
+.title {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.title > h1 {
+  font-size: 2rem;
+  font-family: outfit-bold;
+}
+.title p {
+  font-size: 1rem;
+}
+.title p:first-child {
+  color: var(--primary-color2);
+}
+.title p:last-child {
+  color: var(--primary-color5);
+}
+.intro-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+}
+.intro1,
+.intro2 {
+  max-width: 600px;
+}
+.intro1 p:first-child {
+  color: var(--primary-color2);
+}
+.intro1 p:last-child {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.intro2 {
+  color: var(--primary-color4);
+  align-self: flex-start;
+  padding-top: 2.5rem;
+}
+.intro2 p:first-child {
+  padding-bottom: 1rem;
 }
 /* Header */
 header {
@@ -243,30 +286,9 @@ nav {
 }
 /* Process section */
 .prcoess-content {
-  padding: 2rem;
-}
-.prcoess-intro-container {
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-.process-intro1,
-.process-intro2 {
-  max-width: 600px;
-}
-.process-intro1 p:first-child {
-  color: var(--primary-color2);
-}
-.process-intro1 p:last-child {
-  font-size: 3rem;
-  font-weight: 600;
-}
-.process-intro2 {
-  color: var(--primary-color4);
-  align-self: flex-start;
-  padding-top: 2.5rem;
-}
-.process-intro2 p:first-child {
-  padding-bottom: 1rem;
+  padding: 0 2rem 5rem 2rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 .process-icons {
   justify-content: space-evenly;
@@ -312,17 +334,8 @@ nav {
   overscroll-behavior: none;
   text-align: center;
 }
-.portfolio-title {
-  padding: 5rem;
-}
-#portfolio > h1 {
-  font-size: 2rem;
-  font-family: outfit-bold;
-}
-#portfolio > p {
-  color: var(--primary-color5);
-  font-size: 1rem;
-  margin: 0 auto;
+#portfolio .title {
+  padding-bottom: 5rem;
 }
 #portfolio .images {
   position: relative;
@@ -331,7 +344,7 @@ nav {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr) 2rem;
   justify-content: center;
   justify-items: center;
   align-items: center;
@@ -397,5 +410,42 @@ nav {
 }
 /* Services section */
 #services {
-  z-index: 3;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.service-names {
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 1200px;
+  padding-bottom: 2rem;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  margin: 0 auto;
+  place-items: center;
+}
+.services-grid-item {
+  padding: 2rem;
+}
+.services-grid-item img,
+.services-grid-item h3 {
+  padding-bottom: 0.5rem;
+}
+.services-grid-item p {
+  color: var(--primary-color6);
+}
+.services-grid-item:nth-child(1),
+.services-grid-item:nth-child(2),
+.services-grid-item:nth-child(4),
+.services-grid-item:nth-child(5),
+.services-grid-item:nth-child(7),
+.services-grid-item:nth-child(8) {
+  border-right: 1px solid var(--primary-color7);
+}
+.services-grid-item:nth-child(-n + 6) {
+  border-bottom: 1px solid var(--primary-color7);
 }

@@ -72,7 +72,7 @@ if (portfolioSection && portfolioImages.length) {
   portfolioImages.forEach((img) => {
     const speed = parseFloat(img.getAttribute("data-speed")) || 1;
 
-    const movement = (1 - speed) * 200; 
+    const movement = (1 - speed) * 200;
 
     gsap.fromTo(
       img,
@@ -90,3 +90,33 @@ if (portfolioSection && portfolioImages.length) {
     );
   });
 }
+// Swiper
+const swiperSlides = document.querySelectorAll(".swiper-slide");
+
+const swiper = new Swiper(".swiper", {
+  spaceBetween: 30,
+  slidesPerView: "auto",
+  loop: true,
+  speed: 10000,
+  freeMode: true,
+  allowTouchMove: false,
+  autoplay: {
+    delay: 0,
+  },
+});
+
+function stopAutoplay() {
+  const swiperTranslate = swiper.getTranslate();
+  swiper.setTranslate(swiperTranslate);
+  swiper.autoplay.stop();
+}
+function startAutoplay() {
+  swiper.slideTo(swiper.activeIndex, 5000, false);
+  swiper.autoplay.start();
+}
+
+swiperSlides.forEach((slide) => {
+  slide.addEventListener("mouseleave", () => startAutoplay());
+  slide.addEventListener("mouseenter", () => stopAutoplay());
+});
+

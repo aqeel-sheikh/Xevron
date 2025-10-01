@@ -1,6 +1,7 @@
 :root {
   --bg-color1: #111204;
   --bg-color2: #222222;
+  --bg-color3: #f9f9f9;
   --primary-color1: #fff;
   --primary-color2: #b9fd50;
   --primary-color3: #000;
@@ -8,6 +9,7 @@
   --primary-color5: #00000080;
   --primary-color6: #9593a4;
   --primary-color7: #b8fd5010;
+  --primary-color8: #d9d9d9;
 }
 body {
   color: var(--primary-color1);
@@ -448,4 +450,81 @@ nav {
 }
 .services-grid-item:nth-child(-n + 6) {
   border-bottom: 1px solid var(--primary-color7);
+}
+/* Testimonials section */
+#testimonial {
+  background-color: var(--primary-color1);
+  color: var(--primary-color3);
+  padding: 2rem 0;
+}
+#testimonial .title{
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+#testimonial .title :nth-child(n) {
+  color: var(--primary-color3);
+}
+
+/* Testimonial card – fixed size and aspect */
+.testimonial-card {
+  background-color: var(--bg-color3);
+  border: 1px solid var(--primary-color8);
+  max-width: 600px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.14);
+  padding: 2rem 2rem 1.5rem 2rem;
+  gap: 1rem;
+}
+.testimonial-card .card-content {
+  gap: 1rem;
+}
+/* Circular avatar, fixed size */
+.testimonial-card img {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: flex-end;
+  float: right;
+  background: #dedede;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+}
+
+.testimonial-card h3 {
+  color: var(--primary-color3);
+  font-size: 1.14rem;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+.testimonial-card p {
+  color: var(--primary-color5);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.testimonial-card .author {
+  margin-top: auto;
+}
+.testimonial-card .author p:first-child {
+  color: var(--primary-color3);
+  font-weight: 600;
+}
+.testimonial-card .author p:last-child {
+  color: var(--primary-color6);
+  font-size: 0.93rem;
+}
+.swiper {
+  max-width: 100%;
+  padding: 2rem 0;
+}
+.swiper-slide{
+  position: relative ;
+  aspect-ratio: 12/6;
+  cursor: grab;
+  user-select: none;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.swiper-wrapper{
+  transition-timing-function: linear !important;
 }

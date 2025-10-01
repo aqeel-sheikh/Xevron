@@ -10,6 +10,7 @@
   --primary-color6: #9593a4;
   --primary-color7: #b8fd5010;
   --primary-color8: #d9d9d9;
+  --primary-color9: #A5D96F;
 }
 body {
   color: var(--primary-color1);
@@ -638,6 +639,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+  padding-bottom: 1rem;
 }
 .blog-card {
   align-items: stretch;
@@ -689,4 +691,10 @@ nav {
   color: #bdbfbc;
   font-size: 1rem;
   margin: 0;
+}
+#blogs .btn.load-more{
+  font-family: outfit;
+  background: none;
+  color: var(--primary-color9);
+  border: 1px solid var(--primary-color2);
 }

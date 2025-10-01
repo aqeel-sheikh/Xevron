@@ -53,3 +53,19 @@
     width: 10%;
   }
 }
+@media (max-width: 480px) {
+  .blog-card {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .blog-card__img {
+    border-radius: 10px 10px 0 0;
+    padding: 1rem;
+  }
+  .blog-card__img img {
+    height: 105px;
+  }
+  .blog-card__content {
+    padding: 1rem;
+  }
+}

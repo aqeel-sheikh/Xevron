@@ -743,12 +743,19 @@
                   </div>
                 </div>
               </div>
-              <form action="#" id="myform">
+              <form action="#" id="myform" class="flex-column">
+              <label for="textarea">
+                Your Message
                 <textarea name="message" id="textarea" required></textarea>
-                <div class="flex">
-                  <p>We will answer your questions via email within 48 hours.</p>
-                  <button class="btn" type="submit">Send</button>
-                </div>
+              </label>
+              <div class="flex">
+                <label for="email">
+                  Your Email <br> 
+                  <input type="email" name="email" id="email" required>
+                </label>
+                <button class="btn" type="submit">Send</button>
+              </div>
+              <p>We will answer your questions via email within 48 hours.</p>
               </form>
             </div>
           </section>

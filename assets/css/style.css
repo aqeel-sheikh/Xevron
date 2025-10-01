@@ -758,22 +758,29 @@ nav {
 .faq-content{
   gap: 1rem;
 }
+input, textarea{
+  border: 1px solid var(--primary-color5);
+  border-radius: 6px;
+  padding: .5rem;
+}
 textarea{
   width: 100%;
   max-width: 500px;
   height: 120px;
-  border-radius: 6px;
-  padding: .5rem;
 }
 #myform div{
   justify-content: space-between;
+  align-items: center;
   font-family: outfit;
   padding-top: 1rem;
 }
-#myform div p{
+#myform p{
+  padding-top: .5rem;
   color: var(--primary-color5);
+  font-size: .9rem;
 }
 #myform div button{
   border-radius: 20px;
   padding: .5rem 2rem;
+  align-self: flex-end;
 }

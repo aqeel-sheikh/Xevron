@@ -19,6 +19,14 @@
     padding-right: 0;
   }
 }
+@media (max-width: 1129px) {
+  .pricing-card.card-side {
+    transform: scale(.9);
+  }
+  .pricing-card.card-side:hover{
+    transform: scale(.92);
+  }
+}
 @media (max-width: 860px) {
   nav {
     padding: 2rem 0.5rem;

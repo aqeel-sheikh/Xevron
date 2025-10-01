@@ -102,3 +102,29 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
+// Faq accordian
+const items = document.querySelectorAll('.accordion button');
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  const img = this.querySelector('img.icon');
+
+  items.forEach(item => {
+    item.setAttribute('aria-expanded', 'false');
+    const icon = item.querySelector('img.icon');
+    if (icon) {
+      icon.src = 'assets/images/icons/faq/arrowDown.svg'; 
+    }
+  });
+  if (itemToggle === 'false') {
+    this.setAttribute('aria-expanded', 'true');
+    if (img) {
+      img.src = 'assets/images/icons/faq/arrowUp.svg';
+    }
+  }
+}
+
+items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+
+

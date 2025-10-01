@@ -698,3 +698,82 @@ nav {
   color: var(--primary-color9);
   border: 1px solid var(--primary-color2);
 }
+/* FAQ's section */
+#faq{
+  background-color: var(--primary-color1);
+  color: var(--primary-color3);
+  align-items: center;
+  justify-content: center;
+}
+#faq .title p{
+  color: var(--primary-color5);
+  padding-bottom: 2rem;
+}
+.faq-content{
+  margin-bottom: auto;
+}
+.accordion{
+  gap: 1rem;
+}
+.accordion-item{
+  max-width: 500px;
+  background-color: var(--bg-color1);
+  padding: 1rem;
+  border-radius: 20px;
+}
+.accordion button {
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  position: relative;
+  text-align: left;
+  padding: .5rem 0;
+  width: 100%;
+  color: var(--primary-color1);
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+.accordion button[aria-expanded='true'] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--primary-color1);
+}
+.faq-content{
+  gap: 1rem;
+}
+textarea{
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  border-radius: 6px;
+  padding: .5rem;
+}
+#myform div{
+  justify-content: space-between;
+  font-family: outfit;
+  padding-top: 1rem;
+}
+#myform div p{
+  color: var(--primary-color5);
+}
+#myform div button{
+  border-radius: 20px;
+  padding: .5rem 2rem;
+}

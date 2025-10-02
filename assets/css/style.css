@@ -17,7 +17,6 @@ body {
   color: var(--primary-color1);
   font-family: poppins;
   background-color: var(--bg-color1);
-  scroll-behavior: smooth;
 }
 /* Global */
 .section {
@@ -431,6 +430,7 @@ nav {
   justify-content: center;
   max-width: 1200px;
   padding-bottom: 2rem;
+  pointer-events: none;
 }
 .services-grid {
   display: grid;

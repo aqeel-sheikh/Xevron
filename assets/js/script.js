@@ -5,6 +5,18 @@ const navLinks = document.querySelector(".nav-right .nav-links");
 const navRight = document.querySelector(".nav-right");
 const getStartedBtn = document.querySelector(".nav-right .get-started");
 
+// Anchor links Scroll
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      ScrollSmoother.get().scrollTo(target, true, "top top", 80); // 80px offset for header
+    }
+  });
+});
+
+// Media query for hamburger menu
 const mql = window.matchMedia("(max-width: 860px)");
 
 hamburgerBtn.addEventListener("click", () => {
@@ -49,6 +61,7 @@ hamburgerContent.addEventListener("click", function (event) {
 mql.addEventListener("change", checkScreenSize);
 document.addEventListener("DOMContentLoaded", checkScreenSize);
 
+// Gsap scroll smoother
 gsap.registerPlugin(ScrollSmoother);
 const clamp = gsap.utils.clamp(-20, 20);
 const skewSetter = gsap.quickTo("#portfolio img", "skewY");
@@ -90,7 +103,8 @@ if (portfolioSection && portfolioImages.length) {
     );
   });
 }
-// Swiper
+
+// Swiper carousel for testimonial cards
 const swiper = new Swiper(".swiper", {
   spaceBetween: 30,
   slidesPerView: "auto",
@@ -101,29 +115,27 @@ const swiper = new Swiper(".swiper", {
     delay: 0,
   },
 });
+
 // Faq accordian
-const items = document.querySelectorAll('.accordion button');
+const items = document.querySelectorAll(".accordion button");
 
 function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  const img = this.querySelector('img.icon');
+  const itemToggle = this.getAttribute("aria-expanded");
+  const img = this.querySelector("img.icon");
 
-  items.forEach(item => {
-    item.setAttribute('aria-expanded', 'false');
-    const icon = item.querySelector('img.icon');
+  items.forEach((item) => {
+    item.setAttribute("aria-expanded", "false");
+    const icon = item.querySelector("img.icon");
     if (icon) {
-      icon.src = 'assets/images/icons/faq/arrowDown.svg'; 
+      icon.src = "assets/images/icons/faq/arrowDown.svg";
     }
   });
-  if (itemToggle === 'false') {
-    this.setAttribute('aria-expanded', 'true');
+  if (itemToggle === "false") {
+    this.setAttribute("aria-expanded", "true");
     if (img) {
-      img.src = 'assets/images/icons/faq/arrowUp.svg';
+      img.src = "assets/images/icons/faq/arrowUp.svg";
     }
   }
 }
 
-items.forEach((item) => item.addEventListener('click', toggleAccordion));
-
-
-
+items.forEach((item) => item.addEventListener("click", toggleAccordion));

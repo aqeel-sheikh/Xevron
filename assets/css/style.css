@@ -902,3 +902,21 @@ footer .cta p{
   gap: 1rem;
   flex-wrap: wrap;
 }
+.footer-right .contact:nth-child(-n+2) p:hover{
+  cursor: pointer;
+  color: var(--primary-color2);
+}
+.footer-right .contact svg{
+  cursor: pointer;
+  transition: transform .3s ease, filter .3s ease;
+}
+.footer-right .contact svg:hover{
+  transform: scale(1.1);
+  filter: drop-shadow(0 1px 4px #b9fd50);
+}
+.footer-right .contact svg:active{
+  transform: scale(1)
+}
+.footer-right .contact svg:hover path{
+  fill: var(--primary-color2);
+}

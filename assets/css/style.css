@@ -2,6 +2,7 @@
   --bg-color1: #111204;
   --bg-color2: #222222;
   --bg-color3: #f9f9f9;
+  --bg-color4: #1E2008;
   --primary-color1: #fff;
   --primary-color2: #b9fd50;
   --primary-color3: #000;
@@ -524,7 +525,6 @@ nav {
   aspect-ratio: 12/6;
   user-select: none;
   overflow: hidden;
-  overflow-y: auto;
 }
 .swiper-wrapper{
   transition-timing-function: linear !important;
@@ -704,6 +704,7 @@ nav {
   color: var(--primary-color3);
   align-items: center;
   justify-content: center;
+  padding-bottom: 15rem;
 }
 #faq .title p{
   color: var(--primary-color5);
@@ -783,4 +784,66 @@ textarea{
   border-radius: 20px;
   padding: .5rem 2rem;
   align-self: flex-end;
+}
+/* Footer */
+footer{
+  min-height: 70vh;
+  position: relative;
+  font-family: outfit;
+  padding: 2rem 2rem 0 2rem;
+}
+footer .cta{
+  width:fit-content;
+  position: absolute;
+  left: 9%;
+  padding: 1.5rem 0rem;
+  text-align: center;
+  gap: 1rem;
+  top: -25%;
+  background-color: var(--bg-color4);
+  align-items: center;
+  border-radius: 10px;
+  width: 80%;
+}
+footer .cta h1{
+  max-width: 500px;
+  font-size: 3rem;
+}
+footer .cta p{
+  max-width: 300px;
+  font-size: .9rem;
+}
+.footer-content{
+  margin-top: auto;
+}
+.footer-info{
+  width: 85%;
+  margin: 15rem auto 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  border-bottom: 1px solid #404040;
+  padding-bottom: 2rem;
+}
+.footer-left, .footer-right, .contact{
+  gap: 1rem;
+}
+.footer-right{
+  padding-top: 1rem;
+}
+.footer-nav{
+  width: 85%;
+  margin: auto;
+  padding: 1rem 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-nav .nav-links a{
+  padding: 0;
+}
+.footer-nav .nav-links{
+  gap: 1rem;
+  flex-wrap: wrap;
 }

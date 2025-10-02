@@ -660,6 +660,7 @@ nav {
   justify-content: center;
   gap: 1rem;
   padding-bottom: 1rem;
+  margin-bottom: auto;
 }
 .blog-card {
   align-items: stretch;
@@ -727,6 +728,7 @@ nav {
   border: 1px solid var(--primary-color2);
   position: relative;
   transition: transform .3s ease;
+  margin-bottom: auto;
 }
 .load-more-btn::after{
   content: "";

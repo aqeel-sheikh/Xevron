@@ -518,13 +518,14 @@ nav {
 .swiper {
   max-width: 100%;
   margin-bottom: auto;
-  pointer-events: none;
+  cursor: grab;
 }
 .swiper-slide{
   position: relative ;
   aspect-ratio: 12/6;
   user-select: none;
   overflow: hidden;
+  will-change: transform;
 }
 .swiper-wrapper{
   transition-timing-function: linear !important;

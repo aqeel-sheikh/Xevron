@@ -95,13 +95,12 @@ const swiper = new Swiper(".swiper", {
   spaceBetween: 30,
   slidesPerView: "auto",
   loop: true,
-  speed: 10000,
+  speed: 6000,
   freeMode: true,
   autoplay: {
     delay: 0,
   },
 });
-
 // Faq accordian
 const items = document.querySelectorAll('.accordion button');
 

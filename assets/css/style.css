@@ -56,7 +56,7 @@ button{
   text-align: center;
   margin-bottom: auto ;
 }
-.title > h1 {
+.title > h2 {
   font-size: 2rem;
   font-family: outfit-bold;
 }
@@ -324,7 +324,10 @@ nav {
   max-width: 400px;
   padding-top: 2rem;
 }
-.process-card h3,
+.process-card h2{
+  font-size: 1.17rem;
+}
+.process-card h2,
 .process-card p {
   padding-top: 1rem;
 }
